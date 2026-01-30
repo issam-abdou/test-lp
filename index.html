@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Commerce Bot - ضاعف مبيعاتك تلقائياً</title>
+    <title>ScaleFlow - نظام أتمتة التجارة الإلكترونية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Typography Update */
+        /* Typography & Base */
         body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
         .rtl { direction: rtl; }
         .ltr { direction: ltr; }
-        [v-cloak] { display: none; }
         .transition-all { transition: all 0.3s ease; }
-        
-        /* Smooth Scrolling */
         html { scroll-behavior: smooth; }
     </style>
     <script>
@@ -25,74 +22,82 @@
                         primary: {
                             50: '#eef2ff',
                             100: '#e0e7ff',
-                            600: '#4f46e5', /* Indigo 600 */
+                            600: '#4f46e5',
                             700: '#4338ca',
                             900: '#312e81',
                         },
                         accent: {
-                            500: '#f43f5e', /* Rose for urgency */
+                            500: '#f43f5e',
                         }
                     }
                 }
             }
         }
     </script>
+    
     <script>
-  (function(d,t) {
-    var BASE_URL="https://chatwoot.app.demium.site";
-    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=BASE_URL+"/packs/js/sdk.js";
-    g.async = true;
-    s.parentNode.insertBefore(g,s);
-    g.onload=function(){
-      window.chatwootSDK.run({
-        websiteToken: 'uPdjLvNpSxExDXYjTgDkLqEX',
-        baseUrl: BASE_URL
-      })
-    }
-  })(document,"script");
-</script>
+      (function(d,t) {
+        var BASE_URL="https://chatwoot.app.demium.site";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'uPdjLvNpSxExDXYjTgDkLqEX',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
 
+    <script>
+        function openBooking() {
+            // Replace with your Booking Link (Calendly) or Typebot Contact Flow
+            window.open('https://viewer.typebot.io/YOUR_TYPEBOT_ID', '_blank'); 
+        }
+    </script>
 </head>
 <body class="bg-white text-slate-900 selection:bg-primary-100 selection:text-primary-900">
     <div id="app" class="min-h-screen transition-all">
+        
         <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
                     <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="setView('home')">
-                        <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-600/20">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                        <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/></svg>
                         </div>
-                        <span class="font-bold text-xl tracking-tight text-slate-900">SalesBot<span class="text-primary-600">.AI</span></span>
+                        <span class="font-bold text-xl tracking-tight text-slate-900">ScaleFlow<span class="text-primary-600">.dz</span></span>
                     </div>
 
                     <div class="hidden md:flex items-center gap-8">
-                        <button onclick="setView('home')" id="nav-home" class="text-slate-900 font-medium text-sm transition-colors hover:text-primary-600">الرئيسية</button>
-                        <a href="#pain-points" id="nav-features" class="text-slate-500 hover:text-primary-600 transition-colors font-medium text-sm">لماذا نحن؟</a>
-                        <a href="#services" id="nav-services" class="text-slate-500 hover:text-primary-600 transition-colors font-medium text-sm">الباقات</a>
+                        <button onclick="setView('home')" class="text-slate-900 font-medium text-sm hover:text-primary-600 transition-colors">الرئيسية</button>
+                        <a href="#pain-points" class="text-slate-500 hover:text-primary-600 transition-colors font-medium text-sm">لماذا نحن؟</a>
+                        <a href="#services" class="text-slate-500 hover:text-primary-600 transition-colors font-medium text-sm">الحلول</a>
                         
                         <div class="flex items-center border border-slate-200 rounded-lg px-1 p-1 bg-slate-50">
                             <button onclick="setLang('en')" class="lang-btn en px-3 py-1 rounded-md text-xs font-bold uppercase transition-all text-slate-400 hover:text-slate-600">EN</button>
                             <button onclick="setLang('ar')" class="lang-btn ar px-3 py-1 rounded-md text-xs font-bold uppercase transition-all bg-white text-primary-600 shadow-sm">AR</button>
                         </div>
 
-                        <button onclick="setView('contact')" class="bg-primary-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-600/30 transition-all transform hover:-translate-y-0.5" id="nav-cta">
+                        <button onclick="openBooking()" class="bg-primary-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-600/30 transition-all transform hover:-translate-y-0.5 animate-pulse-slow">
                             احجز استشارة مجانية
                         </button>
                     </div>
 
                     <div class="md:hidden flex items-center gap-4">
-                        <button onclick="toggleMenu()" class="text-slate-600 p-2 hover:bg-slate-50 rounded-lg transition-colors">
-                            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                        <button onclick="toggleMenu()" class="text-slate-600 p-2 hover:bg-slate-50 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                         </button>
                     </div>
                 </div>
             </div>
+            
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl px-4 py-6 space-y-4 absolute w-full z-40">
-                <button onclick="setView('home'); toggleMenu();" class="block text-slate-600 font-medium w-full text-right hover:text-primary-600 p-2" id="m-nav-home">الرئيسية</button>
-                <a href="#features" class="block text-slate-600 font-medium hover:text-primary-600 p-2" onclick="toggleMenu()" id="m-nav-features">المميزات</a>
-                <a href="#services" class="block text-slate-600 font-medium hover:text-primary-600 p-2" onclick="toggleMenu()" id="m-nav-services">الأسعار</a>
-                <button onclick="setView('contact'); toggleMenu();" class="block text-primary-600 font-bold w-full text-right p-2 bg-primary-50 rounded-lg" id="m-nav-contact">احجز استشارة</button>
+                <button onclick="setView('home'); toggleMenu();" class="block text-slate-600 font-medium w-full text-right hover:text-primary-600 p-2">الرئيسية</button>
+                <a href="#pain-points" class="block text-slate-600 font-medium hover:text-primary-600 p-2" onclick="toggleMenu()">المميزات</a>
+                <button onclick="openBooking(); toggleMenu();" class="block text-primary-600 font-bold w-full text-right p-2 bg-primary-50 rounded-lg">احجز استشارة مجانية</button>
             </div>
         </nav>
 
@@ -100,64 +105,67 @@
             <div id="home-view">
                 <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
-                        <div class="text-right">
-                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-accent-500 text-xs font-bold mb-8 border border-red-100 animate-pulse" id="hero-badge">
-                                🛑 هل تخسر مبيعات وأنت نائم؟
+                        <div class="text-right order-2 lg:order-1">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-accent-500 text-xs font-bold mb-8 border border-red-100">
+                                🛑 هل تعاني من مشاكل الـ Retour؟
                             </div>
                             <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-[1.2] mb-6 tracking-tight" id="hero-title">
-                                توقف عن تجاهل العملاء.<br>
-                                <span class="text-primary-600">وظّف بوت ذكي</span> يبيع بدلاً منك 24/7.
+                                حوّل متجرك الإلكتروني إلى <br>
+                                <span class="text-primary-600">آلة مبيعات وتأكيد</span> لا تتوقف.
                             </h1>
                             <p class="text-lg text-slate-500 mb-10 leading-relaxed max-w-xl font-normal" id="hero-subtitle">
-                                العميل لا ينتظر. إذا لم ترد فوراً، سيشتري من منافسك. نظامنا الذكي يرد على الرسائل، يقنع الزبائن، ويغلق الصفقات تلقائياً على واتساب وانستقرام.
+                                لا تكتفِ بجلب الزوار فقط. نظام <strong>ScaleFlow</strong> يؤكد الطلبيات، يقلل نسبة الـ Retour، ويجيب على العملاء 24/7 عبر واتساب.
                             </p>
                             <div class="flex flex-col sm:flex-row items-center gap-4">
-                                <button onclick="setView('contact')" class="w-full sm:w-auto px-8 py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 shadow-xl shadow-primary-600/20 transition-all hover:-translate-y-1" id="hero-cta-primary">
-                                    جرب الديمو الآن
+                                <button onclick="openBooking()" class="w-full sm:w-auto px-8 py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 shadow-xl shadow-primary-600/20 transition-all hover:-translate-y-1 text-lg">
+                                    🚀 احجز مكالمة استشارية
                                 </button>
-                                <a href="#pain-points" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-600 border border-slate-200 rounded-xl font-bold hover:border-primary-600 hover:text-primary-600 transition-all flex items-center justify-center gap-2" id="hero-cta-secondary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                                    شاهد كيف يعمل
+                                <a href="#pain-points" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-600 border border-slate-200 rounded-xl font-bold hover:border-primary-600 hover:text-primary-600 transition-all flex items-center justify-center gap-2">
+                                    كيف يعمل النظام؟
                                 </a>
                             </div>
                             
                             <div class="mt-8 flex items-center gap-4 text-sm text-slate-400 font-medium">
-                                <div class="flex -space-x-2 space-x-reverse overflow-hidden">
-                                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt=""/>
-                                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt=""/>
-                                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt=""/>
-                                </div>
-                                <span id="social-proof">أكثر من 500 متجر إلكتروني يثق بنا</span>
+                                <span id="social-proof">⚡ موثوق من طرف 50+ متجر COD في الجزائر</span>
                             </div>
                         </div>
                         
-                        <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-primary-600 to-accent-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative group order-1 lg:order-2">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-primary-600 to-accent-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                             <div class="relative bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
-                                <div class="bg-slate-50 px-4 py-3 border-b border-slate-100 flex items-center gap-3">
-                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                                    <span class="text-xs text-slate-400 mr-2 font-mono">Live Sales Dashboard</span>
+                                <div class="bg-slate-50 px-4 py-3 border-b border-slate-100 flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                    </div>
+                                    <span class="text-xs text-green-600 font-bold bg-green-100 px-2 py-1 rounded-full">Automated Flow Active</span>
                                 </div>
-                                <div class="p-6 space-y-4">
+                                <div class="p-6 space-y-4 font-sans">
                                     <div class="flex items-end justify-end gap-3">
                                         <div class="bg-primary-600 text-white p-3 rounded-2xl rounded-br-none text-sm max-w-[80%]">
-                                            مرحبا، كم سعر هذا المنتج؟ وهل التوصيل متوفر للرياض؟
+                                            سلام، حبيت نكوموندي هذه الساعة للبليدة
                                         </div>
                                         <div class="w-8 h-8 bg-slate-200 rounded-full flex-shrink-0"></div>
                                     </div>
+                                    
                                     <div class="flex items-end justify-start gap-3">
-                                        <div class="w-8 h-8 bg-accent-500 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs">🤖</div>
-                                        <div class="bg-slate-100 text-slate-700 p-3 rounded-2xl rounded-bl-none text-sm max-w-[80%]">
-                                            أهلاً بك! 👋 السعر هو 199 ريال فقط.<br>
-                                            ✅ نعم، التوصيل متوفر وسريع للرياض.<br>
-                                            <br>
-                                            هل تود إتمام الطلب الآن لتحصل على خصم 10%؟ 🎁
+                                        <div class="w-8 h-8 bg-black rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs">🤖</div>
+                                        <div class="bg-slate-100 text-slate-700 p-3 rounded-2xl rounded-bl-none text-sm max-w-[85%]">
+                                            مرحبا بك! 🎉 خيار ممتاز.<br>
+                                            السعر هو 3500 دج + توصيل مجاني للبليدة.<br><br>
+                                            <strong>من فضلك، اضغط الزر لتأكيد العنوان والشحن غداً:</strong>
                                         </div>
                                     </div>
+                                    
                                     <div class="flex justify-start pl-11">
-                                        <button class="bg-white border border-primary-600 text-primary-600 text-xs font-bold px-4 py-2 rounded-lg hover:bg-primary-50">نعم، أريد الخصم</button>
+                                        <button class="bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-lg shadow-md hover:bg-green-600 w-full text-center">
+                                            ✅ تأكيد الطلبية (Confirmer)
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="flex justify-center pt-2">
+                                        <span class="text-[10px] text-slate-400 bg-slate-50 px-3 py-1 rounded-full">تم حفظ الطلب في Google Sheets تلقائياً 📊</span>
                                     </div>
                                 </div>
                             </div>
@@ -168,24 +176,24 @@
                 <section id="pain-points" class="py-20 bg-slate-50 border-t border-slate-200">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-16">
-                            <h2 class="text-3xl font-bold text-slate-900 mb-4" id="pain-title">التجارة الإلكترونية صعبة... بدون أتمتة</h2>
-                            <p class="text-slate-500 max-w-2xl mx-auto" id="pain-subtitle">أكبر مشاكل التجار اليوم ليست في المنتج، بل في إدارة العملاء.</p>
+                            <h2 class="text-3xl font-bold text-slate-900 mb-4" id="pain-title">التجارة الإلكترونية صعبة... بدون ScaleFlow</h2>
+                            <p class="text-slate-500 max-w-2xl mx-auto" id="pain-subtitle">أكبر مشاكل التجار اليوم ليست في المنتج، بل في "العمليات" (Operations).</p>
                         </div>
                         <div class="grid md:grid-cols-3 gap-8">
-                            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                                <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6 text-2xl">⏳</div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-1-t">الرد المتأخر = خسارة عميل</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-1-d">العميل يراسلك ويراسل 3 منافسين في نفس الوقت. أول من يرد يكسب البيعة.</p>
+                            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-6 text-2xl">💸</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-1-t">ثقب في الميزانية</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-1-d">تدفع الملايين في الإعلانات، لكنك تخسر 40% من العملاء لأنك لم ترد عليهم بسرعة أو نسيت متابعتهم.</p>
                             </div>
-                            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                                <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-6 text-2xl">🛒</div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-2-t">سلات متروكة بالملايين</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-2-d">يدخل العميل، يضيف للسلة، ثم يختفي. هل لديك وقت لمطاردة كل واحد يدوياً؟</p>
+                            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-6 text-2xl">📦</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-2-t">كابوس الـ Retour</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-2-d">إرسال طلبيات لزبائن غير جادين يعني خسارة مصاريف التوصيل. تحتاج نظام "فلترة" قبل الشحن.</p>
                             </div>
-                            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
-                                <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-2xl">😫</div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-3-t">الأسئلة المتكررة منهكة</h3>
-                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-3-d">"كم السعر؟"، "متى يوصل؟"... قضاء يومك في الإجابة على نفس الأسئلة يقتل إنتاجيتك.</p>
+                            <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-2xl">📞</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3" id="pain-3-t">الضغط النفسي</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed" id="pain-3-d">قضاء يومك في الاتصال لتأكيد الطلبيات والرد على "وين راهي سلعتي" يقتل إنتاجيتك.</p>
                             </div>
                         </div>
                     </div>
@@ -193,11 +201,9 @@
 
                 <section id="services" class="py-24 bg-white">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
-                            <div>
-                                <h2 class="text-3xl font-bold text-slate-900 mb-2" id="serv-title">الحل: موظف لا ينام ولا يطلب راتباً</h2>
-                                <p class="text-slate-500 max-w-2xl font-normal" id="serv-subtitle">اختر الطريقة التي تناسب حجم متجرك.</p>
-                            </div>
+                        <div class="mb-16 text-center">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-2" id="serv-title">حلول ScaleFlow المتكاملة</h2>
+                            <p class="text-slate-500 max-w-2xl mx-auto" id="serv-subtitle">نظامنا يعمل كشريك لك في النمو، اختر الطريقة التي تناسبك.</p>
                         </div>
                         
                         <div class="grid lg:grid-cols-2 gap-8">
@@ -206,20 +212,20 @@
                                 <div class="relative z-10">
                                     <div class="flex justify-between items-start mb-6">
                                         <div>
-                                            <h3 class="text-2xl font-bold text-white" id="serv-m-title">البوت الجاهز (SaaS)</h3>
-                                            <p class="text-slate-400 text-sm font-medium mt-1" id="serv-m-price">اشتراك شهري بسيط</p>
+                                            <h3 class="text-2xl font-bold text-white" id="serv-m-title">نظام الـ Growth Partner</h3>
+                                            <p class="text-slate-400 text-sm font-medium mt-1" id="serv-m-price">اشتراك شهري + عمولة نجاح</p>
                                         </div>
                                         <span class="bg-primary-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">الأكثر طلباً</span>
                                     </div>
                                     <p class="text-slate-300 mb-8 text-sm leading-relaxed border-l-2 border-primary-600 pl-4" id="serv-m-desc">
-                                        مثالي للتجار الذين يريدون التركيز على البيع فقط. نحن نجهز البوت، نربطه بمتجرك، ونتأكد أنه يعمل 24/7.
+                                        مثالي للتجار الذين يريدون التركيز على السلع فقط. نحن نتولى بناء مسارات البيع (Funnels)، البوت، والربط مع شركات التوصيل.
                                     </p>
-                                    <ul class="space-y-4 mb-10 text-sm text-slate-300" id="serv-m-list">
-                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> ربط مع واتساب و انستقرام</li>
-                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> سيناريوهات بيع جاهزة ومجربة</li>
-                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> استضافة ودعم فني كامل</li>
+                                    <ul class="space-y-4 mb-10 text-sm text-slate-300">
+                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> أتمتة التأكيد (Auto-Confirmation)</li>
+                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> بوت الرد على الاستفسارات 24/7</li>
+                                        <li class="flex items-center gap-3"><svg class="text-primary-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> لوحة تحكم CRM موحدة</li>
                                     </ul>
-                                    <button class="w-full py-4 bg-white text-slate-900 rounded-xl font-bold text-sm hover:bg-slate-100 transition-all" id="serv-m-cta">ابدأ التجربة المجانية</button>
+                                    <button onclick="openBooking()" class="w-full py-4 bg-white text-slate-900 rounded-xl font-bold text-sm hover:bg-slate-100 transition-all" id="serv-m-cta">ابدأ التجربة المجانية</button>
                                 </div>
                             </div>
 
@@ -227,14 +233,14 @@
                                 <h3 class="text-2xl font-bold text-slate-900" id="serv-s-title">تملّك النظام (Self-Hosted)</h3>
                                 <p class="text-slate-500 text-sm font-medium mt-1 uppercase tracking-wider" id="serv-s-price">دفعة واحدة للعمر</p>
                                 <p class="text-slate-500 my-8 text-sm leading-relaxed border-l-2 border-slate-200 pl-4" id="serv-s-desc">
-                                    للشركات الكبيرة التي تريد التحكم الكامل في بيانات العملاء وعدم دفع اشتراكات شهرية. نبي لك النظام على سيرفرك.
+                                    للشركات الكبيرة التي تريد التحكم الكامل في بيانات العملاء (Data Privacy). نبني لك النظام على سيرفرك الخاص باستخدام Coolify.
                                 </p>
                                 <ul class="space-y-4 mb-10 text-sm text-slate-600" id="serv-s-list">
-                                    <li class="flex items-center gap-3"><svg class="text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> بياناتك ملك لك 100%</li>
+                                    <li class="flex items-center gap-3"><svg class="text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> بيانات العملاء ملك لك 100%</li>
                                     <li class="flex items-center gap-3"><svg class="text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> لا قيود على عدد الرسائل</li>
                                     <li class="flex items-center gap-3"><svg class="text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> تدريب لفريقك على الإدارة</li>
                                 </ul>
-                                <button class="w-full py-4 bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-bold text-sm hover:bg-white hover:border-primary-600 hover:text-primary-600 transition-all" id="serv-s-cta">تواصل للطلب</button>
+                                <button onclick="setView('contact')" class="w-full py-4 bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-bold text-sm hover:bg-white hover:border-primary-600 hover:text-primary-600 transition-all" id="serv-s-cta">تواصل للطلب</button>
                             </div>
                         </div>
                     </div>
@@ -246,39 +252,33 @@
                     <div class="grid md:grid-cols-2 gap-16">
                         <div>
                             <h1 class="text-4xl font-bold text-slate-900 mb-4 leading-tight" id="con-title">جاهز لمضاعفة مبيعاتك؟</h1>
-                            <p class="text-slate-500 mb-12 text-lg font-light" id="con-subtitle">املأ النموذج وسنتواصل معك لنشرح لك كيف يمكن للذكاء الاصطناعي تغيير متجرك.</p>
+                            <p class="text-slate-500 mb-12 text-lg font-light" id="con-subtitle">لا تضيع المزيد من الوقت في الرد اليدوي. املأ النموذج لنبدأ الأتمتة.</p>
                             
                             <div class="bg-primary-50 p-6 rounded-2xl border border-primary-100 mb-8">
                                 <h4 class="font-bold text-primary-900 mb-2">📞 تفضل مكالمة سريعة؟</h4>
                                 <p class="text-primary-700 text-sm mb-4">يمكنك حجز استشارة مجانية مدتها 15 دقيقة مع خبير أتمتة.</p>
                                 <button class="text-primary-600 font-bold text-sm hover:underline">احجز موعد في الكاليندر ←</button>
                             </div>
-
-                            <div class="space-y-8">
-                                <div class="flex items-start gap-4">
-                                    <div class="p-3 bg-white border border-slate-100 rounded-full text-primary-600 shadow-sm"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-                                    <div>
-                                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-1">Email</h4>
-                                        <p class="text-slate-900 font-medium font-mono">sales@aisaas.site</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50">
                             <form id="contact-form" class="space-y-5" onsubmit="handleContact(event)">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2" id="label-name">اسم المتجر / الشخص</label>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">اسم المتجر</label>
                                     <input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary-600 focus:bg-white transition-colors">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2" id="label-email">البريد الإلكتروني</label>
-                                    <input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary-600 focus:bg-white transition-colors">
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">رقم الهاتف (واتساب)</label>
+                                    <input type="tel" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary-600 focus:bg-white transition-colors">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2" id="label-msg">ما هي أكبر مشكلة تواجهها؟</label>
-                                    <textarea rows="4" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary-600 focus:bg-white transition-colors resize-none" placeholder="مثال: الرد على العملاء يأخذ كل وقتي..."></textarea>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">كم عدد الطلبيات يومياً؟</label>
+                                    <select class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-primary-600 focus:bg-white transition-colors">
+                                        <option>أقل من 10 طلبيات</option>
+                                        <option>10 - 50 طلبية</option>
+                                        <option>+50 طلبية</option>
+                                    </select>
                                 </div>
-                                <button type="submit" class="w-full py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-600/20" id="btn-send">
+                                <button type="submit" class="w-full py-4 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-600/20">
                                     🚀 أرسل الطلب
                                 </button>
                             </form>
@@ -286,8 +286,8 @@
                                 <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                                 </div>
-                                <p class="text-lg font-bold text-slate-900" id="txt-success">تم الاستلام! استعد لزيادة مبيعاتك.</p>
-                                <p class="text-slate-500 text-sm mt-2">سنتواصل معك خلال 24 ساعة.</p>
+                                <p class="text-lg font-bold text-slate-900">تم الاستلام!</p>
+                                <p class="text-slate-500 text-sm mt-2">سنتواصل معك عبر واتساب قريباً.</p>
                             </div>
                         </div>
                     </div>
@@ -299,76 +299,58 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 justify-between items-center gap-8">
                 <div>
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-6 h-6 bg-primary-600 rounded flex items-center justify-center text-white text-[10px]">⚡</div>
-                        <span class="font-bold text-base text-slate-900">SalesBot.AI</span>
+                        <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-[10px]">SF</div>
+                        <span class="font-bold text-base text-slate-900">ScaleFlow.dz</span>
                     </div>
-                    <p class="text-sm max-w-xs leading-relaxed" id="footer-desc">نساعد التجار على النوم بسلام بينما تستمر المبيعات.</p>
+                    <p class="text-sm max-w-xs leading-relaxed" id="footer-desc">نساعد التجار الجزائريين على النمو بذكاء.</p>
                 </div>
                 <div class="md:text-left text-right">
-                    <p class="text-sm font-medium text-slate-900 mb-1" id="footer-rights">© 2026 AI SaaS. جميع الحقوق محفوظة.</p>
-                    <div class="flex gap-4 mt-2 justify-end text-slate-400">
-                        <a href="#" class="hover:text-primary-600 transition-colors">Instagram</a>
-                        <a href="#" class="hover:text-primary-600 transition-colors">Twitter</a>
-                    </div>
+                    <p class="text-sm font-medium text-slate-900 mb-1">© 2026 ScaleFlow.</p>
                 </div>
             </div>
         </footer>
     </div>
 
     <script>
+        // Content Translation Object
         const content = {
             en: {
                 dir: 'ltr',
-                nav: { home: "Home", features: "Why Us?", pricing: "Pricing", contact: "Book Demo", cta: "Get Started" },
-                hero: { badge: "🛑 Losing sales while sleeping?", title: "Stop Ignoring Customers. Hire an AI Sales Agent.", subtitle: "Customers won't wait. Our AI replies instantly, persuades buyers, and closes deals 24/7 on WhatsApp & Instagram.", cta1: "Try Demo Now", cta2: "How it works" },
-                pain: { t: "E-commerce is hard... without automation", sub: "Your biggest problem isn't the product, it's support.", p1t: "Slow Reply = Lost Sale", p1d: "Customers message you and 3 competitors. First to reply wins.", p2t: "Abandoned Carts", p2d: "People add to cart and vanish. Do you have time to chase them all?", p3t: "Repetitive Questions", p3d: "Pricing? Delivery? Answering the same questions kills your productivity." },
-                serv: { title: "The Solution: An Employee Who Never Sleeps", sub: "Choose the model that fits your business size.", mt: "Ready-to-Use Bot", mp: "Monthly Subscription", md: "Perfect for sellers who just want to sell. We set it up, link it, and ensure it runs 24/7.", ml: ["WhatsApp & Instagram Link", "Proven Sales Scripts", "Full Hosting & Support"], mc: "Start Free Trial", st: "Self-Hosted System", sp: "One-Time Payment", sd: "For big brands wanting full data control. We build the system on your server.", sl: ["100% Data Ownership", "Unlimited Messages", "Team Training"], sc: "Contact Sales" },
-                con: { title: "Ready to Scale?", sub: "Fill the form and let's discuss how AI can transform your store.", n: "Store / Name", e: "Email", m: "What's your biggest challenge?", s: "🚀 Send Request", ok: "Received! Get ready to scale." },
-                foot: { desc: "We help merchants sleep peacefully while sales continue.", r: "© 2026 SalesBot.AI. All rights reserved." }
+                nav: { home: "Home", features: "Why Us?", services: "Solutions", contact: "Book Audit", cta: "Book Free Consultation" },
+                hero: { title: "Turn your store into a <span class='text-primary-600'>Sales Machine</span>.", subtitle: "Stop just bringing traffic. ScaleFlow automates confirmation, reduces returns, and handles support 24/7." },
+                pain: { title: "E-commerce is hard without ScaleFlow", t1: "Budget Leaks", d1: "Losing money on ads because of slow replies.", t2: "Return Nightmares", d2: "Shipping to fake customers costs you money.", t3: "Stress", d3: "Spending all day calling customers confirms nothing but your burnout." },
+                serv: { title: "Integrated Growth Solutions", sub: "We partner with you to scale.", m_title: "Growth Partner", m_desc: "We build the funnels, the bots, and the logistics links.", s_title: "Self-Hosted", s_desc: "Total control over your data on your own server." }
             },
             ar: {
                 dir: 'rtl',
-                nav: { home: "الرئيسية", features: "لماذا نحن؟", pricing: "الباقات", contact: "احجز استشارة", cta: "احجز استشارة مجانية" },
-                hero: { badge: "🛑 هل تخسر مبيعات وأنت نائم؟", title: "توقف عن تجاهل العملاء. وظّف بوت ذكي يبيع بدلاً منك 24/7.", subtitle: "العميل لا ينتظر. إذا لم ترد فوراً، سيشتري من منافسك. نظامنا الذكي يرد على الرسائل، يقنع الزبائن، ويغلق الصفقات تلقائياً على واتساب وانستقرام.", cta1: "جرب الديمو الآن", cta2: "شاهد كيف يعمل" },
-                pain: { t: "التجارة الإلكترونية صعبة... بدون أتمتة", sub: "أكبر مشاكل التجار اليوم ليست في المنتج، بل في إدارة العملاء.", p1t: "الرد المتأخر = خسارة عميل", p1d: "العميل يراسلك ويراسل 3 منافسين في نفس الوقت. أول من يرد يكسب البيعة.", p2t: "سلات متروكة بالملايين", p2d: "يدخل العميل، يضيف للسلة، ثم يختفي. هل لديك وقت لمطاردة كل واحد يدوياً؟", p3t: "الأسئلة المتكررة منهكة", p3d: "\"كم السعر؟\"، \"متى يوصل؟\"... قضاء يومك في الإجابة على نفس الأسئلة يقتل إنتاجيتك." },
-                serv: { title: "الحل: موظف لا ينام ولا يطلب راتباً", sub: "اختر الطريقة التي تناسب حجم متجرك.", mt: "البوت الجاهز (SaaS)", mp: "اشتراك شهري بسيط", md: "مثالي للتجار الذين يريدون التركيز على البيع فقط. نحن نجهز البوت، نربطه بمتجرك، ونتأكد أنه يعمل 24/7.", ml: ["ربط مع واتساب و انستقرام", "سيناريوهات بيع جاهزة ومجربة", "استضافة ودعم فني كامل"], mc: "ابدأ التجربة المجانية", st: "تملّك النظام (Self-Hosted)", sp: "دفعة واحدة للعمر", sd: "للشركات الكبيرة التي تريد التحكم الكامل في بيانات العملاء وعدم دفع اشتراكات شهرية. نبي لك النظام على سيرفرك.", sl: ["بياناتك ملك لك 100%", "لا قيود على عدد الرسائل", "تدريب لفريقك على الإدارة"], sc: "تواصل للطلب" },
-                con: { title: "جاهز لمضاعفة مبيعاتك؟", sub: "املأ النموذج وسنتواصل معك لنشرح لك كيف يمكن للذكاء الاصطناعي تغيير متجرك.", n: "اسم المتجر / الشخص", e: "البريد الإلكتروني", m: "ما هي أكبر مشكلة تواجهها؟", s: "🚀 أرسل الطلب", ok: "تم الاستلام! استعد لزيادة مبيعاتك." },
-                foot: { desc: "نساعد التجار على النوم بسلام بينما تستمر المبيعات.", r: "© 2026 SalesBot.AI. جميع الحقوق محفوظة." }
+                nav: { home: "الرئيسية", features: "لماذا نحن؟", services: "الحلول", contact: "احجز استشارة", cta: "احجز استشارة مجانية" },
+                hero: { title: "حوّل متجرك الإلكتروني إلى <br><span class='text-primary-600'>آلة مبيعات وتأكيد</span> لا تتوقف.", subtitle: "لا تكتفِ بجلب الزوار فقط. نظام <strong>ScaleFlow</strong> يؤكد الطلبيات، يقلل نسبة الـ Retour، ويجيب على العملاء 24/7 عبر واتساب." },
+                pain: { title: "التجارة الإلكترونية صعبة... بدون ScaleFlow", t1: "ثقب في الميزانية", d1: "تدفع الملايين في الإعلانات، لكنك تخسر 40% من العملاء لأنك لم ترد عليهم بسرعة.", t2: "كابوس الـ Retour", d2: "إرسال طلبيات لزبائن غير جادين يعني خسارة مصاريف التوصيل.", t3: "الضغط النفسي", d3: "قضاء يومك في الاتصال لتأكيد الطلبيات يقتل إنتاجيتك." },
+                serv: { title: "حلول ScaleFlow المتكاملة", sub: "نظامنا يعمل كشريك لك في النمو.", m_title: "نظام الـ Growth Partner", m_desc: "مثالي للتجار الذين يريدون التركيز على السلع فقط. نحن نتولى بناء مسارات البيع والبوت.", s_title: "تملّك النظام (Self-Hosted)", s_desc: "للشركات الكبيرة التي تريد التحكم الكامل في بيانات العملاء." }
             }
         };
 
-        let currentLang = 'ar';
-        let currentView = 'home';
-
         function setLang(l) {
-            // Simplified for this demo: Update text based on `content` object
-            // Note: In a full production app, I'd map every ID individually or use a reactive framework like Vue/React.
-            // Since the HTML structure is hardcoded with Arabic, reloading/re-rendering logic would be needed for full i18n switching 
-            // of all dynamic elements. For this snippet, I updated the content object to reflect the new copy.
-            
-            // Visual toggle only for demo
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('bg-white', 'text-primary-600', 'shadow-sm');
                 btn.classList.add('text-slate-400');
             });
             document.querySelector(`.lang-btn.${l}`).classList.add('bg-white', 'text-primary-600', 'shadow-sm');
-            document.querySelector(`.lang-btn.${l}`).classList.remove('text-slate-400');
             
             document.documentElement.lang = l;
             document.documentElement.dir = content[l].dir;
             document.body.className = content[l].dir === 'rtl' ? 'rtl' : 'ltr';
 
-            // Basic Text Updates (Mapping a few key elements for demonstration)
+            // Basic updates for demo (expand as needed)
             const t = content[l];
-            document.getElementById('hero-title').innerText = t.hero.title;
-            document.getElementById('hero-subtitle').innerText = t.hero.subtitle;
-            document.getElementById('hero-cta-primary').innerText = t.hero.cta1;
-            document.getElementById('pain-title').innerText = t.pain.t;
-            // ... (Additional mapping would go here for all IDs)
+            document.getElementById('hero-title').innerHTML = t.hero.title;
+            document.getElementById('hero-subtitle').innerHTML = t.hero.subtitle;
+            document.getElementById('pain-title').innerText = t.pain.title;
+            document.getElementById('pain-1-t').innerText = t.pain.t1;
+            document.getElementById('pain-1-d').innerText = t.pain.d1;
         }
 
         function setView(v) {
-            currentView = v;
             document.getElementById('home-view').classList.toggle('hidden', v !== 'home');
             document.getElementById('contact-view').classList.toggle('hidden', v !== 'contact');
             window.scrollTo(0, 0);
